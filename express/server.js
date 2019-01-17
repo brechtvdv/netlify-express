@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 
-app.get("/graph", (req, res) => {
+router.get("/graph", (req, res) => {
   res.sendFile(__dirname + "/files/master-catalog.json");
 })
 app.use("/graph", express.static('files'));
