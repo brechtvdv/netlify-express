@@ -3,8 +3,11 @@ const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
+const cors = require("cors");
 
 const router = express.Router();
+
+app.use(cors());
 
 const catalog = {
     "@context": {
