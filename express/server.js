@@ -5,6 +5,12 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
+
+app.get("/graph", (req, res) => {
+  res.sendFile(__dirname + "/files/master-catalog.json");
+})
+app.use("/graph", express.static('files'));
+
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
